@@ -15,7 +15,7 @@ public class CriadorDeSessoesDiaria implements CriadorDeSessoes {
 		List<Sessao> sessoes = new ArrayList<Sessao>();
 		
 		int dias = Days.daysBetween(inicio, fim).getDays();
-		for (int i = 0; i < dias; i++) {
+		for (int i = 0; i <= dias; i++) {
 			Sessao sessao = new Sessao();
 			sessao.setEspetaculo(espetaculo);
 			

@@ -13,9 +13,12 @@ public class CriadorDeSessoesSemanal implements CriadorDeSessoes {
 	@Override
 	public List<Sessao> criaSessoes(LocalDate inicio, LocalDate fim, LocalTime horario, Espetaculo espetaculo) {
 		List<Sessao> sessoes = new ArrayList<Sessao>();
+		if(inicio.isAfter(fim)){
+			return sessoes;
+		}
 		
 		int semanas = Weeks.weeksBetween(inicio, fim).getWeeks();
-		for (int i = 0; i < semanas; i++) {
+		for (int i = 0; i <= semanas; i++) {
 			Sessao sessao = new Sessao();
 			sessao.setEspetaculo(espetaculo);
 			
